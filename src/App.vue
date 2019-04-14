@@ -3,6 +3,7 @@
 		<nav-bar></nav-bar>
 		<div class="main">
 			<router-view />
+			<fixed-right></fixed-right>
 		</div>
 		<foot></foot>
 	</div>
@@ -11,12 +12,14 @@
 <script>
 	import NavBar from "@/components/Nav"
 	import Foot from "@/components/Footer"
+	import FixedRight from "@/components/FixedRight"
 	
 	export default {
 		name: 'App',
 		components: {
 			NavBar,
-			Foot
+			Foot,
+			FixedRight
 		},
 		data() {
 			return{

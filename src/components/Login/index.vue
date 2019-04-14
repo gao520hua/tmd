@@ -5,14 +5,14 @@
 				<div class="title">登录</div>
 				<div class="content">
 					<div class="tabs">
-						<div :class="['item', {'active': item.id == tabs_selected_id}]" v-for="item in tabs" @click="clickTabs(item.id)">{{item.name}}</div>
+						<div :class="['item', {'active': item.id == tabs_selected_id}]" v-for="item in tabs" :key="item.id" @click="clickTabs(item.id)">{{item.name}}</div>
 					</div>
 					<div class="wrap">
 						<el-form label-position="left" label-width="96px" ref="loginForm" :model="formData">
 							<el-form-item :label="label">
 								<el-input v-model="formData.phone" size="medium">
 									<el-select v-if="is_show_pl" v-model="select_val" slot="prepend" placeholder="请选择" @change="selectChange">
-										<el-option :label="item.label" :value="item.value" v-for="item in phone_list">
+										<el-option :label="item.label" :value="item.value" v-for="item in phone_list" :key="item.value">
 											<span style="float: left;">{{item.label}}</span>
 											<span style="float: right;">{{item.value}}</span>
 										</el-option>
